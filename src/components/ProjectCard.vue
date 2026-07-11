@@ -1,8 +1,11 @@
 <script setup>
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import TechChip from './TechChip.vue';
+import TrailerModal from './TrailerModal.vue';
 
 const { t } = useI18n();
+const showTrailer = ref(false);
 
 defineProps({
   project: { type: Object, required: true },
@@ -11,14 +14,15 @@ defineProps({
 
 <template>
   <article class="flex flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] transition hover:border-white/20">
-    <div v-if="project.image" class="max-h-44 overflow-hidden border-b border-white/5">
+    <div v-if="project.image" class="flex h-44 items-center justify-center overflow-hidden border-b border-white/5 bg-black/40">
       <img
         :src="project.image"
         :alt="`${project.name} screenshot`"
-        class="h-44 w-full object-cover object-top"
+        class="h-full w-full object-contain"
         loading="lazy"
       />
     </div>
+
     <div class="flex flex-1 flex-col p-5">
       <div class="flex items-start justify-between gap-2">
         <h3 class="font-semibold text-white">{{ project.name }}</h3>
@@ -34,6 +38,11 @@ defineProps({
         {{ t(`projects.items.${project.id}.desc`) }}
       </p>
       <div class="mt-4 flex gap-4 text-sm font-medium">
+        <button
+          v-if="project.trailer"
+          class="gradient-text cursor-pointer"
+          @click="showTrailer = true"
+        >▶ {{ t('projects.watchTrailer') }}</button>
         <a
           v-if="project.live && project.liveUrl"
           :href="project.liveUrl"
@@ -50,5 +59,12 @@ defineProps({
         >{{ t('platforms.viewCode') }} ↗</a>
       </div>
     </div>
+
+    <TrailerModal
+      v-if="showTrailer && project.trailer"
+      :src="project.trailer"
+      :title="`${project.name} — trailer`"
+      @close="showTrailer = false"
+    />
   </article>
 </template>

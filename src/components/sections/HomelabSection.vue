@@ -1,6 +1,8 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
 import SectionHeading from '../SectionHeading.vue';
+import SectionGlow from '../SectionGlow.vue';
+import SquareGrid from '../SquareGrid.vue';
 
 const { t } = useI18n();
 
@@ -13,8 +15,15 @@ const cards = [
 </script>
 
 <template>
-  <section id="homelab" class="scroll-mt-20 border-y border-white/5 bg-white/[0.015] py-24">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+  <section id="homelab" class="relative scroll-mt-20 overflow-hidden border-y border-white/5 bg-white/[0.015] py-24">
+    <!-- Grelha compacta animada, no canto inferior esquerdo -->
+    <SquareGrid
+      :cell="36"
+      :max-cells="7"
+      mask="radial-gradient(ellipse 70% 85% at 10% 80%, black 20%, transparent 95%)"
+    />
+    <SectionGlow color="#22d3ee" position="bottom-0 right-0" size="h-80 w-80" />
+    <div class="mx-auto max-w-6xl px-4 sm:px-6" v-reveal>
       <SectionHeading :title="t('homelab.title')" :sub="t('homelab.sub')" />
       <div class="grid gap-5 sm:grid-cols-2">
         <div

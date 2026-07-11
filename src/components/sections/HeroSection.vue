@@ -18,10 +18,17 @@ const { t } = useI18n();
     ></div>
 
     <div class="relative mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
-      <p class="font-mono text-sm text-zinc-400">
-        <span class="text-(--color-accent-2)">$</span> whoami
-      </p>
-      <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+      <div class="mb-6 flex items-center gap-4">
+        <img
+          src="/thumbs/eu.jpg"
+          alt="André Pacheco"
+          class="h-16 w-16 rounded-full border-2 border-white/15 object-cover sm:h-20 sm:w-20"
+        />
+        <p class="font-mono text-sm text-zinc-400">
+          <span class="text-(--color-accent-2)">$</span> whoami
+        </p>
+      </div>
+      <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
         {{ t('hero.greeting') }} <span class="gradient-text">André Pacheco</span>
       </h1>
       <p class="mt-3 font-mono text-lg text-zinc-400">// {{ t('hero.role') }}</p>

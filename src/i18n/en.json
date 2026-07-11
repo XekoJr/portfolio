@@ -17,10 +17,10 @@
   },
   "about": {
     "title": "About me",
-    "p1": "I'm André, a Computer Engineering student who learns by shipping. My projects aren't tutorial clones — they're platforms with real databases, real auth, real bugs I had to find and fix, deployed on infrastructure I run myself.",
+    "p1": "I'm André, a Computer Engineering student — curious by nature, with a particular pull towards cybersecurity, and always looking for the next thing to learn. My projects aren't tutorial clones — they're platforms with real databases, real auth, and real bugs I had to track down and fix, deployed on infrastructure I run myself.",
     "p2": "What I enjoy most is the full path: designing the data layer (PostgreSQL partitions, triggers, stored procedures), building the API on top, giving it a clean UI, then containerizing the whole thing and putting it behind a reverse proxy on my own hardware.",
     "aiTitle": "How I use AI",
-    "aiText": "I've been using Claude Code in my daily workflow since February 2026 — for code review, security passes, academic reports and PT-PT proofreading. The point isn't delegating everything: it's orchestrating AI tools inside a workflow I control. I also run my own AI agent (Hera, built on the Hermes Agent framework) connected to Telegram, Google Calendar and Home Assistant, with persistent memory — on my homelab, not someone else's cloud."
+    "aiText": "I've been using Claude Code in my daily workflow since February 2026 — for code review and security passes. The point isn't delegating everything: it's orchestrating AI tools inside a workflow I control. I also run my own self-hosted AI agent, connected to a few personal services, with persistent memory — on my homelab, not someone else's cloud."
   },
   "stack": {
     "title": "Stack",
@@ -36,7 +36,7 @@
   },
   "platforms": {
     "title": "Live Platforms",
-    "sub": "Full platforms you can actually use — each one dockerized and self-hosted on my homelab, exposed through Cloudflare Tunnel + Caddy.",
+    "sub": "Full platforms you can actually use — each one dockerized and self-hosted on my homelab, exposed through a Cloudflare Tunnel.",
     "openLive": "Open live",
     "liveSoon": "Live soon",
     "viewCode": "View code",
@@ -98,9 +98,11 @@
     "title": "Projects",
     "sub": "Games, systems programming and mobile work.",
     "gamesTitle": "Games",
+    "firstTitle": "First Project",
     "systemsTitle": "Java & Systems",
     "mobileTitle": "Mobile",
     "privateBadge": "Private product",
+    "watchTrailer": "Watch trailer",
     "items": {
       "netherfall": {
         "desc": "Top-down survival game built with Pygame — v2 of my Vampire Survivors-inspired project, rebuilt with better architecture, save system and progression. Browser build coming to this site."
@@ -136,20 +138,20 @@
     "sub": "The part that doesn't show up in a repo: everything on this site runs on hardware I manage.",
     "cards": {
       "proxmox": {
-        "title": "Proxmox + LXC",
-        "desc": "A Proxmox host running isolated LXC containers for each service — the platforms above, plus password management, my AI agent and more."
+        "title": "Virtualization & isolation",
+        "desc": "A hypervisor running isolated containers, one per service — the platforms above plus a handful of other self-hosted tools, never sharing a box."
       },
       "edge": {
-        "title": "Cloudflare Tunnel + Caddy",
-        "desc": "No open ports: traffic reaches the homelab through a Cloudflare Tunnel, and Caddy routes each subdomain to its container with centralized TLS."
+        "title": "Tunnel + reverse proxy",
+        "desc": "No open ports on my router: a tunnel brings traffic in from the internet, and a reverse proxy routes each subdomain to the right container with TLS handled centrally."
       },
       "hera": {
-        "title": "Hera — personal AI agent",
-        "desc": "My own agent on the Hermes Agent framework: Telegram interface, Google Calendar, Home Assistant control and persistent memory. Self-hosted, like everything else."
+        "title": "Personal automation agent",
+        "desc": "A self-built, self-hosted assistant connected to a few of my personal services, with persistent memory — running on my own hardware, not a third-party cloud."
       },
       "email": {
         "title": "Transactional email",
-        "desc": "Resend with a verified sending domain (mail.andrepacheco.pt) — account verification and password-reset emails for the platforms that need them."
+        "desc": "A verified sending domain — account verification and password-reset emails for the platforms that need them."
       }
     }
   },

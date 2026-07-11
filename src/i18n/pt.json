@@ -17,10 +17,10 @@
   },
   "about": {
     "title": "Sobre mim",
-    "p1": "Sou o André, estudante de Engenharia Informática que aprende a construir coisas a sério. Os meus projetos não são clones de tutoriais — são plataformas com bases de dados reais, autenticação real, bugs reais que tive de encontrar e corrigir, instaladas em infraestrutura gerida por mim.",
+    "p1": "Sou o André, estudante de Engenharia Informática — curioso por natureza, com um interesse especial por cibersegurança, e sempre à procura da próxima coisa para aprender. Os meus projetos não são clones de tutoriais — são plataformas com bases de dados reais, autenticação real, bugs reais que tive de encontrar e corrigir, instaladas em infraestrutura gerida por mim.",
     "p2": "O que mais gosto é do caminho completo: desenhar a camada de dados (partições, triggers e stored procedures em PostgreSQL), construir a API por cima, dar-lhe uma UI limpa, e depois containerizar tudo e pô-lo atrás de um reverse proxy no meu próprio hardware.",
     "aiTitle": "Como uso AI",
-    "aiText": "Uso o Claude Code no meu workflow diário desde fevereiro de 2026 — para revisão de código, rondas de segurança, relatórios académicos e revisão de PT-PT. A questão não é delegar tudo: é orquestrar ferramentas de AI dentro de um workflow que eu controlo. Também corro o meu próprio agente de AI (Hera, construída sobre o framework Hermes Agent), ligada ao Telegram, Google Calendar e Home Assistant, com memória persistente — no meu homelab, não na cloud de outra pessoa."
+    "aiText": "Uso o Claude Code no meu workflow diário desde fevereiro de 2026 — para revisão de código e rondas de segurança. A questão não é delegar tudo: é orquestrar ferramentas de AI dentro de um workflow que eu controlo. Também corro o meu próprio agente de AI self-hosted, ligado a alguns dos meus serviços pessoais, com memória persistente — no meu homelab, não na cloud de outra pessoa."
   },
   "stack": {
     "title": "Stack",
@@ -36,7 +36,7 @@
   },
   "platforms": {
     "title": "Plataformas Live",
-    "sub": "Plataformas completas que podes mesmo usar — cada uma dockerizada e self-hosted no meu homelab, exposta via Cloudflare Tunnel + Caddy.",
+    "sub": "Plataformas completas que podes mesmo usar — cada uma dockerizada e self-hosted no meu homelab, exposta via Cloudflare Tunnel.",
     "openLive": "Abrir live",
     "liveSoon": "Brevemente",
     "viewCode": "Ver código",
@@ -98,9 +98,11 @@
     "title": "Projetos",
     "sub": "Jogos, programação de sistemas e mobile.",
     "gamesTitle": "Jogos",
+    "firstTitle": "Primeiro Projeto",
     "systemsTitle": "Java & Sistemas",
     "mobileTitle": "Mobile",
     "privateBadge": "Produto privado",
+    "watchTrailer": "Ver trailer",
     "items": {
       "netherfall": {
         "desc": "Jogo de sobrevivência top-down feito com Pygame — v2 do meu projeto inspirado em Vampire Survivors, reconstruído com melhor arquitetura, sistema de saves e progressão. Versão para browser em breve neste site."
@@ -136,20 +138,20 @@
     "sub": "A parte que não aparece num repo: tudo neste site corre em hardware gerido por mim.",
     "cards": {
       "proxmox": {
-        "title": "Proxmox + LXC",
-        "desc": "Um host Proxmox com containers LXC isolados por serviço — as plataformas aqui de cima, mais gestão de passwords, o meu agente de AI e outros."
+        "title": "Virtualização & isolamento",
+        "desc": "Um hipervisor com containers isolados, um por serviço — as plataformas aqui de cima mais um punhado de outras ferramentas self-hosted, nunca a partilhar máquina."
       },
       "edge": {
-        "title": "Cloudflare Tunnel + Caddy",
-        "desc": "Zero portas abertas: o tráfego chega ao homelab por um Cloudflare Tunnel, e o Caddy encaminha cada subdomínio para o seu container com TLS centralizado."
+        "title": "Tunnel + reverse proxy",
+        "desc": "Zero portas abertas no router: um tunnel traz o tráfego de fora, e um reverse proxy encaminha cada subdomínio para o container certo, com TLS gerido de forma centralizada."
       },
       "hera": {
-        "title": "Hera — agente de AI pessoal",
-        "desc": "O meu próprio agente sobre o framework Hermes Agent: interface Telegram, Google Calendar, controlo do Home Assistant e memória persistente. Self-hosted, como tudo o resto."
+        "title": "Agente pessoal de automação",
+        "desc": "Um assistente self-hosted, construído por mim, ligado a alguns dos meus serviços pessoais, com memória persistente — a correr no meu próprio hardware, não numa cloud de terceiros."
       },
       "email": {
         "title": "Email transacional",
-        "desc": "Resend com domínio de envio verificado (mail.andrepacheco.pt) — emails de verificação de conta e reset de password para as plataformas que precisam."
+        "desc": "Um domínio de envio verificado — emails de verificação de conta e reset de password para as plataformas que precisam."
       }
     }
   },

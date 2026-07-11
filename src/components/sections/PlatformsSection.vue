@@ -3,6 +3,7 @@ import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import SectionHeading from '../SectionHeading.vue';
 import TechChip from '../TechChip.vue';
+import SquareGrid from '../SquareGrid.vue';
 import { platforms } from '../../data/projects';
 
 const { t, tm, rt } = useI18n();
@@ -21,8 +22,14 @@ function initials(name) {
 </script>
 
 <template>
-  <section id="platforms" class="scroll-mt-20 border-y border-white/5 bg-white/[0.015] py-24">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+  <section id="platforms" class="relative scroll-mt-20 overflow-hidden border-y border-white/5 bg-white/[0.015] py-24">
+    <!-- Grelha animada como no hero, mas mais calma e encostada à direita -->
+    <SquareGrid
+      :cell="48"
+      :max-cells="9"
+      mask="radial-gradient(ellipse 75% 90% at 88% 40%, black 25%, transparent 95%)"
+    />
+    <div class="mx-auto max-w-6xl px-4 sm:px-6" v-reveal>
       <SectionHeading :title="t('platforms.title')" :sub="t('platforms.sub')" />
 
       <!-- Tab bar -->
@@ -49,17 +56,17 @@ function initials(name) {
         role="tabpanel"
       >
         <!-- Screenshot / monograma -->
-        <div class="overflow-hidden rounded-xl border border-white/10">
+        <div class="flex min-h-56 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/40">
           <img
             v-if="active.image"
             :src="active.image"
             :alt="`${active.name} screenshot`"
-            class="h-full w-full object-cover object-top"
+            class="h-full w-full object-contain"
             loading="lazy"
           />
           <div
             v-else
-            class="flex h-full min-h-56 items-center justify-center bg-gradient-to-br from-violet-600/15 to-cyan-500/10"
+            class="flex h-full min-h-56 w-full items-center justify-center bg-gradient-to-br from-violet-600/15 to-cyan-500/10"
           >
             <span class="gradient-text font-mono text-6xl font-bold">{{ initials(active.name) }}</span>
           </div>

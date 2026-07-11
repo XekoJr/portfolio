@@ -56,7 +56,7 @@ export const platforms = [
     repo: 'https://github.com/XekoJr/Kits',
     liveUrl: 'https://kits.andrepacheco.pt',
     live: false,
-    image: null,
+    image: '/thumbs/kits.png',
     stack: ['Laravel', 'Svelte', 'PostgreSQL', 'Docker'],
   },
   {
@@ -75,19 +75,25 @@ export const games = [
     id: 'netherfall',
     name: 'MCG: Netherfall',
     repo: 'https://github.com/XekoJr/mcg-netherfall',
-    image: '/thumbs/vampire-survivors.jpg',
+    image: '/thumbs/netherfall.png',
+    // Vídeo local (re-comprimido para 720p/12MB), aberto numa modal;
+    // original: NetherfallTrailerAndrePacheco-compressed.mp4 no repo do jogo
+    trailer: '/trailers/netherfall.mp4',
     stack: ['Python', 'Pygame'],
   },
-  {
-    id: 'f1page',
-    name: 'F1: Drive to Survive',
-    repo: 'https://github.com/XekoJr/f1-drive-to-survive',
-    liveUrl: 'https://xekojr.github.io/f1-drive-to-survive/F1DriveToSurvive.html',
-    live: true,
-    image: '/thumbs/f1-page.jpg',
-    stack: ['HTML', 'CSS'],
-  },
 ];
+
+// O primeiro projeto "a sério" — HTML/CSS vanilla, não é um jogo, fica
+// numa categoria própria para mostrar a progressão desde o início
+export const firstProject = {
+  id: 'f1page',
+  name: 'F1: Drive to Survive',
+  repo: 'https://github.com/XekoJr/f1-drive-to-survive',
+  liveUrl: 'https://xekojr.github.io/f1-drive-to-survive/F1DriveToSurvive.html',
+  live: true,
+  image: '/thumbs/f1-page.jpg',
+  stack: ['HTML', 'CSS'],
+};
 
 export const systems = [
   {

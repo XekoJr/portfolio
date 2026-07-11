@@ -9,6 +9,7 @@ Single-page site built with **Vue 3 + Vite + Tailwind CSS v4**, with an animated
 - **EN/PT i18n** (vue-i18n) — English by default, Portuguese auto-detected from the browser language; manual choice persists in `localStorage`
 - **Live platform tabs** — one tab per dockerized platform (VoltExchange, Travel Companion, Folio, Millionaire Game, GameLobby, Kits, EcoFuturo) with screenshot, stack, highlights and demo credentials where applicable
 - **Animated square grid** hero background (canvas) that respects `prefers-reduced-motion`
+- **Scroll-reveal** fade/slide transitions per section (`v-reveal` directive, IntersectionObserver, also respects `prefers-reduced-motion`)
 - Fully static output — no backend, no runtime configuration
 
 ## Development
@@ -27,3 +28,5 @@ The build output is static, so it works either way:
 - **Cloudflare Pages**: build command `npm run build`, output directory `dist`
 
 Live URLs for the platform tabs live in [`src/data/projects.js`](src/data/projects.js) — each entry has a `live` flag to flip when the corresponding platform goes online.
+
+For the full homelab deployment (Cloudflare Tunnel + Caddy, subdomain-per-platform, env vars per project), see [`../deploy/DEPLOY.md`](../deploy/DEPLOY.md).
