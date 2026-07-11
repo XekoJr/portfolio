@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --color-accent: #8b5cf6;
+  --color-accent-2: #22d3ee;
+  --color-ink: #0a0a0b;
+}
+
+html {
+  background-color: var(--color-ink);
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-[#0a0a0b] text-zinc-300 font-sans antialiased;
+}
+
+/* Título de secção com gradiente — usado em todas as secções */
+.gradient-text {
+  background: linear-gradient(120deg, var(--color-accent), var(--color-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+}

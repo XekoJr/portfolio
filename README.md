@@ -1,34 +1,29 @@
-# 👋 Hello, I'm André Pacheco!
-🚀 Passionate developer.
+# andrepacheco.pt — Portfolio
 
-## 🔧 Tech Stack:
-- 💻 **Languages:** JavaScript, Python, Java, PHP, Kotlin
-- 📱 **Mobile:** Android (Kotlin)
-- 🌐 **Web Dev:** Laravel, Node.js/Express.js, React, HTML, CSS
-- 🛢 **Database:** MySQL, SQLite
+My personal portfolio, live at [andrepacheco.pt](https://andrepacheco.pt).
 
-## 🏗️ Projects I've Worked On:
+Single-page site built with **Vue 3 + Vite + Tailwind CSS v4**, with an animated square-grid hero, a tech-stack section rendered from [simple-icons](https://simple-icons.github.io/simple-icons-website/) (inlined at build time, no CDN), a tabbed **Live Platforms** section for the self-hosted demos, grouped project sections (games / Java & systems / mobile), and a homelab/infrastructure overview.
 
-### 🌐 **Web Development**
-- 🔥 **[Game Library API](https://github.com/XekoJr/millionaire-api)** – A Laravel API for the Who Wants to be Millionaire game.
-- 🎮 **[GameLobby Platform](https://github.com/XekoJr/gamelobby-platform)** – A PHP-based platform to keep track of your games.
-- 🌱 **[Ecofuturo](https://github.com/XekoJr/ecofuturo)** – A PHP-based platform to teach children about the environment through games, quizzes, and activities.
-- 🏎 **[Drive to Survive Fan Page](https://github.com/XekoJr/f1-drive-to-survive)** – A static website about F1.
+## Features
 
-### 🎮 **Game Development**
-- 🕹️ **[2D Survivor](https://github.com/XekoJr/2d-survivor)** – A Vampire Survivors-inspired game using pygame.
-- 🎯 **[Who Wants to Be a Millionaire](https://github.com/XekoJr/who-wants-to-be-millionaire)** – A trivia game using raw JavaScript.
+- **EN/PT i18n** (vue-i18n) — English by default, Portuguese auto-detected from the browser language; manual choice persists in `localStorage`
+- **Live platform tabs** — one tab per dockerized platform (VoltExchange, Travel Companion, Folio, Millionaire Game, GameLobby, Kits, EcoFuturo) with screenshot, stack, highlights and demo credentials where applicable
+- **Animated square grid** hero background (canvas) that respects `prefers-reduced-motion`
+- Fully static output — no backend, no runtime configuration
 
-### 📱 **Mobile Apps**
-- 📞 **[Contacts Manager](https://github.com/XekoJr/android-apps)** – A simple task manager using Kotlin & SQLite.
+## Development
 
-### 🖥️ **Terminal-Based Projects**
-- 🏪 **[Game Store Java](https://github.com/XekoJr/game-store-java)** – A Java-based terminal app for managing a game store.
-- 🔍 **[Store C](https://github.com/XekoJr/store-c)** – A C-based terminal app for managing a game store.
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # static output in dist/
+```
 
-## 📫 Contact Me:
-- 📧 Email: **aapacheco2000@hotmail.com**
-- 🔗 [LinkedIn](https://www.linkedin.com/in/andrepacheco11/)
-- 🌍 [Portfolio](https://xekojr.github.io/portfolio/)
+## Deployment
 
-⭐ **Check out my projects and drop a star if you like them!** ⭐
+The build output is static, so it works either way:
+
+- **Docker (homelab)**: `docker build -t portfolio . && docker run -p 8090:80 portfolio` — multi-stage build, served by nginx
+- **Cloudflare Pages**: build command `npm run build`, output directory `dist`
+
+Live URLs for the platform tabs live in [`src/data/projects.js`](src/data/projects.js) — each entry has a `live` flag to flip when the corresponding platform goes online.

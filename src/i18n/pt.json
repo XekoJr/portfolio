@@ -1,0 +1,165 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "stack": "Stack",
+    "platforms": "Plataformas Live",
+    "projects": "Projetos",
+    "homelab": "Homelab",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Olá, sou o",
+    "role": "Software Developer",
+    "tagline": "Construo plataformas full-stack, jogos e software de sistemas — e faço o hosting eu próprio.",
+    "sub": "Estudante de Engenharia Informática de Oliveira do Hospital, Portugal. Tudo o que está aqui em baixo corre a sério: cada plataforma no seu container Docker, servida a partir do meu homelab.",
+    "ctaPlatforms": "Experimenta as plataformas",
+    "ctaGithub": "GitHub"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "p1": "Sou o André, estudante de Engenharia Informática que aprende a construir coisas a sério. Os meus projetos não são clones de tutoriais — são plataformas com bases de dados reais, autenticação real, bugs reais que tive de encontrar e corrigir, instaladas em infraestrutura gerida por mim.",
+    "p2": "O que mais gosto é do caminho completo: desenhar a camada de dados (partições, triggers e stored procedures em PostgreSQL), construir a API por cima, dar-lhe uma UI limpa, e depois containerizar tudo e pô-lo atrás de um reverse proxy no meu próprio hardware.",
+    "aiTitle": "Como uso AI",
+    "aiText": "Uso o Claude Code no meu workflow diário desde fevereiro de 2026 — para revisão de código, rondas de segurança, relatórios académicos e revisão de PT-PT. A questão não é delegar tudo: é orquestrar ferramentas de AI dentro de um workflow que eu controlo. Também corro o meu próprio agente de AI (Hera, construída sobre o framework Hermes Agent), ligada ao Telegram, Google Calendar e Home Assistant, com memória persistente — no meu homelab, não na cloud de outra pessoa."
+  },
+  "stack": {
+    "title": "Stack",
+    "sub": "Linguagens, frameworks e ferramentas que uso mesmo nos projetos aqui em baixo.",
+    "categories": {
+      "languages": "Linguagens",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "data": "Bases de Dados",
+      "infra": "Infra & DevOps",
+      "mobile-ai": "Mobile & AI tooling"
+    }
+  },
+  "platforms": {
+    "title": "Plataformas Live",
+    "sub": "Plataformas completas que podes mesmo usar — cada uma dockerizada e self-hosted no meu homelab, exposta via Cloudflare Tunnel + Caddy.",
+    "openLive": "Abrir live",
+    "liveSoon": "Brevemente",
+    "viewCode": "Ver código",
+    "demoCreds": "Conta demo",
+    "highlightsLabel": "Destaques",
+    "items": {
+      "voltexchange": {
+        "desc": "Plataforma peer-to-peer de troca de energia. Os utilizadores registam contadores inteligentes, submetem leituras e compram/vendem excedente num mercado aberto — com matching automático dentro da base de dados.",
+        "highlights": [
+          "O PostgreSQL faz o trabalho pesado: 24 partições mensais sobre 500 mil leituras, um matching engine em stored procedure, triggers de deteção de anomalias",
+          "A UI expõe deliberadamente os internals da base de dados — partition pruning, triggers a disparar e procedures de quarentena fazem parte da demo",
+          "Rate limiting, helmet e queries parametrizadas em todo o lado"
+        ]
+      },
+      "travel": {
+        "desc": "Plataforma de planeamento de viagens: pesquisa voos e hotéis, guarda viagens, gere a tua conta. Login OAuth (Google/GitHub), email transacional via Resend e um planeador de viagens com AI mostrado como demo sem gastar tokens.",
+        "highlights": [
+          "Fluxo OAuth authorization-code real com proteção contra sequestro de contas (verificação de email)",
+          "Pesquisa de aeroportos/cidades com dataset open-data depois de a API self-service da Amadeus ter fechado",
+          "Planeador AI apresentado com honestidade: preview pré-gerado em vez de queimar tokens por visitante"
+        ]
+      },
+      "folio": {
+        "desc": "Tracker de portfólio de investimentos. Acompanha ações, ETFs e crypto com preços live, snapshots diários, import em massa de CSV/Excel e contas verificadas por email.",
+        "highlights": [
+          "Backend Spring Boot com pipeline de preços em lote e uma materialized view para os destaques públicos de mercado",
+          "Códigos de verificação e reset de password de 4 caracteres via Resend",
+          "Import em massa que reporta erros por linha sem abortar o ficheiro inteiro"
+        ]
+      },
+      "millionaire": {
+        "desc": "\"Quem Quer Ser Milionário\" — um quiz jogável com uma API Laravel por trás: autenticação JWT, gestão de perguntas e registo de pontuações.",
+        "highlights": [
+          "Originalmente dois repos separados (API + frontend), fundidos e dockerizados como uma plataforma única",
+          "O frontend recebe o URL da API injetado no arranque do container — sem rebuilds por ambiente"
+        ]
+      },
+      "gamelobby": {
+        "desc": "\"TV Time para jogos\" — acompanha o que andas a jogar, avalia e escreve reviews. Os dados dos jogos vêm em direto da API do IGDB.",
+        "highlights": [
+          "Codebase PHP legacy que endureci: sessões nativas a substituir um cookie legível por JS que transportava o hash da password, MD5 migrado para bcrypt com upgrade transparente no login"
+        ]
+      },
+      "kits": {
+        "desc": "Gestor de listas de bagagem — cria kits reutilizáveis para viagens e atividades, para nunca mais te esqueceres do carregador.",
+        "highlights": [
+          "API Laravel + frontend Svelte atrás de um proxy nginx, autenticação por sessão com Sanctum"
+        ]
+      },
+      "ecofuturo": {
+        "desc": "Plataforma educativa que ensina crianças sobre o ambiente através de jogos e puzzles.",
+        "highlights": [
+          "Um dos meus primeiros projetos server-side — mantido online como parte da história de progressão"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "sub": "Jogos, programação de sistemas e mobile.",
+    "gamesTitle": "Jogos",
+    "systemsTitle": "Java & Sistemas",
+    "mobileTitle": "Mobile",
+    "privateBadge": "Produto privado",
+    "items": {
+      "netherfall": {
+        "desc": "Jogo de sobrevivência top-down feito com Pygame — v2 do meu projeto inspirado em Vampire Survivors, reconstruído com melhor arquitetura, sistema de saves e progressão. Versão para browser em breve neste site."
+      },
+      "f1page": {
+        "desc": "Fan page só com HTML e CSS sobre a série Drive to Survive da Netflix — o meu primeiro projeto \"a sério\", mantido aqui para mostrar a progressão."
+      },
+      "repairflow": {
+        "desc": "Gestão de oficina de reparações em duas versões: uma app de terminal com arquitetura service/DAO limpa, e depois a mesma arquitetura evoluída para uma GUI em Java Swing."
+      },
+      "healthcenter": {
+        "desc": "Sistema de gestão de um centro de saúde — projeto final da cadeira de programação, arquitetura service/DAO em Java."
+      },
+      "repairshop": {
+        "desc": "Oficina de reparações em C: tabelas de tipos, listas ligadas por serviço/componente, recursão e persistência em ficheiros binários. Trabalho de Estruturas de Dados tornado projeto autónomo."
+      },
+      "gamestore": {
+        "desc": "Sistema de gestão de uma loja de jogos, em terminal, escrito em Java."
+      },
+      "storec": {
+        "desc": "Sistema de gestão de loja, em terminal, escrito em C."
+      },
+      "androidapps": {
+        "desc": "Coleção de apps Android nativas construídas com Kotlin e Android Studio."
+      },
+      "qrscanner": {
+        "desc": "QR Safe Scanner — um produto real em fase de lançamento: lê códigos QR e passa o destino por um pipeline de verificação de segurança em 5 camadas antes de o abrires. Código fechado (billing com Stripe, planos Trial/Pro/Premium)."
+      }
+    }
+  },
+  "homelab": {
+    "title": "Homelab & Infraestrutura",
+    "sub": "A parte que não aparece num repo: tudo neste site corre em hardware gerido por mim.",
+    "cards": {
+      "proxmox": {
+        "title": "Proxmox + LXC",
+        "desc": "Um host Proxmox com containers LXC isolados por serviço — as plataformas aqui de cima, mais gestão de passwords, o meu agente de AI e outros."
+      },
+      "edge": {
+        "title": "Cloudflare Tunnel + Caddy",
+        "desc": "Zero portas abertas: o tráfego chega ao homelab por um Cloudflare Tunnel, e o Caddy encaminha cada subdomínio para o seu container com TLS centralizado."
+      },
+      "hera": {
+        "title": "Hera — agente de AI pessoal",
+        "desc": "O meu próprio agente sobre o framework Hermes Agent: interface Telegram, Google Calendar, controlo do Home Assistant e memória persistente. Self-hosted, como tudo o resto."
+      },
+      "email": {
+        "title": "Email transacional",
+        "desc": "Resend com domínio de envio verificado (mail.andrepacheco.pt) — emails de verificação de conta e reset de password para as plataformas que precisam."
+      }
+    }
+  },
+  "contact": {
+    "title": "Fala comigo",
+    "text": "Queres falar sobre um projeto, um estágio, ou só trocar notas de homelab?",
+    "emailCta": "Diz olá"
+  },
+  "footer": {
+    "built": "Feito com Vue 3 + Tailwind CSS, self-hosted no meu homelab.",
+    "rights": "André Pacheco"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "nav": {
+    "about": "About",
+    "stack": "Stack",
+    "platforms": "Live Platforms",
+    "projects": "Projects",
+    "homelab": "Homelab",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Software Developer",
+    "tagline": "I build full-stack platforms, games and systems software — and I host them myself.",
+    "sub": "Computer Engineering student from Oliveira do Hospital, Portugal. Everything below runs for real: each platform in its own Docker container, served from my homelab.",
+    "ctaPlatforms": "Try the live platforms",
+    "ctaGithub": "GitHub"
+  },
+  "about": {
+    "title": "About me",
+    "p1": "I'm André, a Computer Engineering student who learns by shipping. My projects aren't tutorial clones — they're platforms with real databases, real auth, real bugs I had to find and fix, deployed on infrastructure I run myself.",
+    "p2": "What I enjoy most is the full path: designing the data layer (PostgreSQL partitions, triggers, stored procedures), building the API on top, giving it a clean UI, then containerizing the whole thing and putting it behind a reverse proxy on my own hardware.",
+    "aiTitle": "How I use AI",
+    "aiText": "I've been using Claude Code in my daily workflow since February 2026 — for code review, security passes, academic reports and PT-PT proofreading. The point isn't delegating everything: it's orchestrating AI tools inside a workflow I control. I also run my own AI agent (Hera, built on the Hermes Agent framework) connected to Telegram, Google Calendar and Home Assistant, with persistent memory — on my homelab, not someone else's cloud."
+  },
+  "stack": {
+    "title": "Stack",
+    "sub": "Languages, frameworks and tools I actually use in the projects below.",
+    "categories": {
+      "languages": "Languages",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "data": "Databases",
+      "infra": "Infra & DevOps",
+      "mobile-ai": "Mobile & AI tooling"
+    }
+  },
+  "platforms": {
+    "title": "Live Platforms",
+    "sub": "Full platforms you can actually use — each one dockerized and self-hosted on my homelab, exposed through Cloudflare Tunnel + Caddy.",
+    "openLive": "Open live",
+    "liveSoon": "Live soon",
+    "viewCode": "View code",
+    "demoCreds": "Demo account",
+    "highlightsLabel": "Highlights",
+    "items": {
+      "voltexchange": {
+        "desc": "Peer-to-peer energy trading platform. Users register smart meters, submit readings, and buy/sell surplus energy on an open market — matched automatically inside the database.",
+        "highlights": [
+          "PostgreSQL does the heavy lifting: 24 monthly range partitions over 500k readings, a stored-procedure matching engine, anomaly-detection triggers",
+          "The UI deliberately exposes the database internals — partition pruning, trigger firings and quarantine procedures are part of the demo",
+          "Rate limiting, helmet, parameterized queries throughout"
+        ]
+      },
+      "travel": {
+        "desc": "Trip planning platform: search flights and hotels, save trips, manage your account. OAuth login (Google/GitHub), transactional email via Resend, and an AI trip planner shown as a token-free demo.",
+        "highlights": [
+          "Real OAuth authorization-code flow with account-hijack protection (verified-email checks)",
+          "Airport/city search backed by an open-data dataset after the Amadeus self-service API closed",
+          "AI planner presented honestly: a scripted preview instead of burning API tokens per visitor"
+        ]
+      },
+      "folio": {
+        "desc": "Investment portfolio tracker. Track stocks, ETFs and crypto with live prices, daily snapshots, bulk import from CSV/Excel, and email-verified accounts.",
+        "highlights": [
+          "Spring Boot backend with a batch price pipeline and a materialized view for the public market highlights",
+          "4-character email verification and password-reset codes via Resend",
+          "Bulk import that reports per-row errors without aborting the whole file"
+        ]
+      },
+      "millionaire": {
+        "desc": "\"Who Wants to Be a Millionaire\" — a playable quiz game with a Laravel API behind it: JWT auth, question management and score tracking.",
+        "highlights": [
+          "Originally two separate repos (API + frontend), merged and dockerized as one platform",
+          "Frontend gets the API URL injected at container start — no rebuilds per environment"
+        ]
+      },
+      "gamelobby": {
+        "desc": "\"TV Time for games\" — track what you're playing, rate it, review it. Game data comes live from the IGDB API.",
+        "highlights": [
+          "Legacy PHP codebase I hardened: session-based auth replacing a JS-readable cookie that carried the password hash, MD5 migrated to bcrypt with transparent upgrade on login"
+        ]
+      },
+      "kits": {
+        "desc": "Packing list manager — build reusable kits for trips and activities so you never forget the charger again.",
+        "highlights": [
+          "Laravel API + Svelte frontend behind an nginx proxy, Sanctum session auth"
+        ]
+      },
+      "ecofuturo": {
+        "desc": "Educational platform that teaches children about the environment through games and puzzles.",
+        "highlights": [
+          "One of my earliest server-side projects — kept online as part of the progression story"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "sub": "Games, systems programming and mobile work.",
+    "gamesTitle": "Games",
+    "systemsTitle": "Java & Systems",
+    "mobileTitle": "Mobile",
+    "privateBadge": "Private product",
+    "items": {
+      "netherfall": {
+        "desc": "Top-down survival game built with Pygame — v2 of my Vampire Survivors-inspired project, rebuilt with better architecture, save system and progression. Browser build coming to this site."
+      },
+      "f1page": {
+        "desc": "HTML & CSS-only fan page for the Netflix series Drive to Survive — my first \"real\" project, kept here to show the progression."
+      },
+      "repairflow": {
+        "desc": "Repair-shop management in two takes: a terminal app with a clean service/DAO architecture, then the same architecture evolved into a Java Swing GUI."
+      },
+      "healthcenter": {
+        "desc": "Health center management system — final project for my programming course, service/DAO architecture in Java."
+      },
+      "repairshop": {
+        "desc": "Repair shop in C: type tables, linked lists per service/component, recursion, and binary-file persistence. Data Structures coursework turned standalone project."
+      },
+      "gamestore": {
+        "desc": "Terminal-based game store management system in Java."
+      },
+      "storec": {
+        "desc": "Terminal-based store management system in C."
+      },
+      "androidapps": {
+        "desc": "Collection of native Android apps built with Kotlin and Android Studio."
+      },
+      "qrscanner": {
+        "desc": "QR Safe Scanner — a real product in launch phase: scans QR codes and runs the target through a 5-layer safety verification pipeline before you open it. Closed source (Stripe billing, Trial/Pro/Premium plans)."
+      }
+    }
+  },
+  "homelab": {
+    "title": "Homelab & Infrastructure",
+    "sub": "The part that doesn't show up in a repo: everything on this site runs on hardware I manage.",
+    "cards": {
+      "proxmox": {
+        "title": "Proxmox + LXC",
+        "desc": "A Proxmox host running isolated LXC containers for each service — the platforms above, plus password management, my AI agent and more."
+      },
+      "edge": {
+        "title": "Cloudflare Tunnel + Caddy",
+        "desc": "No open ports: traffic reaches the homelab through a Cloudflare Tunnel, and Caddy routes each subdomain to its container with centralized TLS."
+      },
+      "hera": {
+        "title": "Hera — personal AI agent",
+        "desc": "My own agent on the Hermes Agent framework: Telegram interface, Google Calendar, Home Assistant control and persistent memory. Self-hosted, like everything else."
+      },
+      "email": {
+        "title": "Transactional email",
+        "desc": "Resend with a verified sending domain (mail.andrepacheco.pt) — account verification and password-reset emails for the platforms that need them."
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "text": "Want to talk about a project, an internship or just trade homelab notes?",
+    "emailCta": "Say hello"
+  },
+  "footer": {
+    "built": "Built with Vue 3 + Tailwind CSS, self-hosted on my homelab.",
+    "rights": "André Pacheco"
+  }
+}

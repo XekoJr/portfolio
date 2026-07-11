@@ -1,0 +1,98 @@
+// Stack tecnológica por categoria — icons via simple-icons (inlined no build,
+// sem CDN). Cada entrada: { name, icon } — icon.path é o SVG path, icon.hex a cor.
+import {
+  siJavascript,
+  siTypescript,
+  siOpenjdk,
+  siPhp,
+  siPython,
+  siKotlin,
+  siC,
+  siNodedotjs,
+  siExpress,
+  siLaravel,
+  siSpring,
+  siVuedotjs,
+  siReact,
+  siSvelte,
+  siTailwindcss,
+  siVite,
+  siPostgresql,
+  siMysql,
+  siSqlite,
+  siDocker,
+  siProxmox,
+  siCaddy,
+  siTailscale,
+  siCloudflare,
+  siNginx,
+  siGit,
+  siLinux,
+  siResend,
+  siAndroid,
+  siClaude,
+} from 'simple-icons';
+
+export const stack = [
+  {
+    id: 'languages',
+    items: [
+      { name: 'JavaScript', icon: siJavascript },
+      { name: 'TypeScript', icon: siTypescript },
+      { name: 'Java', icon: siOpenjdk },
+      { name: 'PHP', icon: siPhp },
+      { name: 'Python', icon: siPython },
+      { name: 'Kotlin', icon: siKotlin },
+      { name: 'C', icon: siC },
+    ],
+  },
+  {
+    id: 'backend',
+    items: [
+      { name: 'Node.js', icon: siNodedotjs },
+      { name: 'Express', icon: siExpress },
+      { name: 'Laravel', icon: siLaravel },
+      { name: 'Spring Boot', icon: siSpring },
+    ],
+  },
+  {
+    id: 'frontend',
+    items: [
+      { name: 'Vue.js', icon: siVuedotjs },
+      { name: 'React', icon: siReact },
+      { name: 'Svelte', icon: siSvelte },
+      { name: 'Tailwind CSS', icon: siTailwindcss },
+      { name: 'Vite', icon: siVite },
+    ],
+  },
+  {
+    id: 'data',
+    items: [
+      { name: 'PostgreSQL', icon: siPostgresql },
+      { name: 'MySQL', icon: siMysql },
+      { name: 'SQLite', icon: siSqlite },
+    ],
+  },
+  {
+    id: 'infra',
+    items: [
+      { name: 'Docker', icon: siDocker },
+      { name: 'Proxmox', icon: siProxmox },
+      { name: 'Caddy', icon: siCaddy },
+      { name: 'nginx', icon: siNginx },
+      { name: 'Tailscale', icon: siTailscale },
+      { name: 'Cloudflare', icon: siCloudflare },
+      { name: 'Resend', icon: siResend },
+      { name: 'Git', icon: siGit },
+      { name: 'Linux', icon: siLinux },
+    ],
+  },
+  {
+    id: 'mobile-ai',
+    items: [
+      { name: 'Android', icon: siAndroid },
+      { name: 'Kotlin', icon: siKotlin },
+      { name: 'Claude Code', icon: siClaude },
+    ],
+  },
+];
