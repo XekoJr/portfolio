@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import SectionHeading from '../SectionHeading.vue';
 import TechChip from '../TechChip.vue';
@@ -9,6 +9,20 @@ import { platforms } from '../../data/projects';
 const { t, tm, rt } = useI18n();
 const activeId = ref(platforms[0].id);
 const active = computed(() => platforms.find((p) => p.id === activeId.value));
+
+const imgLoaded = ref(false);
+watch(activeId, () => {
+  imgLoaded.value = false;
+});
+
+onMounted(() => {
+  platforms.forEach((p) => {
+    if (p.image) {
+      const img = new Image();
+      img.src = p.image;
+    }
+  });
+});
 
 // Monograma para plataformas sem screenshot
 function initials(name) {
@@ -67,8 +81,10 @@ function initials(name) {
             v-if="active.image"
             :src="active.image"
             :alt="`${active.name} screenshot`"
-            class="h-full w-full object-contain"
+            class="h-full w-full object-contain transition-opacity duration-200"
+            :class="imgLoaded ? 'opacity-100' : 'opacity-0'"
             loading="lazy"
+            @load="imgLoaded = true"
           />
           <div
             v-else

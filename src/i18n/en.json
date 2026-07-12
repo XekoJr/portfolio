@@ -18,7 +18,7 @@
   "about": {
     "title": "About me",
     "p1": "I'm André, a Computer Engineering student — curious by nature, with a particular pull towards cybersecurity, and always looking for the next thing to learn. My projects aren't tutorial clones — they're platforms with real databases, real auth, and real bugs I had to track down and fix, deployed on infrastructure I run myself.",
-    "p2": "What I enjoy most is the full path: designing the data layer (PostgreSQL partitions, triggers, stored procedures), building the API on top, giving it a clean UI, then containerizing the whole thing and putting it behind a reverse proxy on my own hardware.",
+    "p2": "What I enjoy most is the full path: designing the data layer, building the API on top, giving it a clean UI, then containerizing the whole thing and putting it behind a reverse proxy on my own hardware.",
     "aiTitle": "How I use AI",
     "aiText": "I've been using Claude Code in my daily workflow since February 2026 — for code review and security passes. The point isn't delegating everything: it's orchestrating AI tools inside a workflow I control. I also run my own self-hosted AI agent, connected to a few personal services, with persistent memory — on my homelab, not someone else's cloud."
   },
