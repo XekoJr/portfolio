@@ -42,8 +42,8 @@ const { t } = useI18n();
       <div class="mt-10 flex flex-wrap items-center gap-4">
         <a
           href="#platforms"
-          class="rounded-lg bg-gradient-to-r from-violet-600 to-cyan-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-violet-600/20 transition hover:opacity-90"
-        >{{ t('hero.ctaPlatforms') }}</a>
+          class="group rounded-lg bg-gradient-to-r from-violet-600 to-cyan-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-violet-600/20 transition hover:opacity-90"
+        >{{ t('hero.ctaPlatforms') }} <span class="inline-block transition-transform group-hover:translate-y-0.5">↓</span></a>
         <a
           :href="site.github"
           target="_blank"

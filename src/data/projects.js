@@ -3,6 +3,8 @@
 // `live: false` mostra "Live soon" até o Tunnel/Caddy estar montado; basta
 // mudar para `true` quando cada plataforma for para o ar.
 
+// `theme` — cor de destaque por plataforma, usada para tingir o painel da
+// tab respetiva (deixa claro que cada tab é uma plataforma diferente)
 export const platforms = [
   {
     id: 'voltexchange',
@@ -11,6 +13,7 @@ export const platforms = [
     liveUrl: 'https://volt.andrepacheco.pt',
     live: false,
     image: '/thumbs/voltexchange.png',
+    theme: '#22d3ee',
     stack: ['Node.js', 'Express', 'PostgreSQL 16', 'Vue 3', 'Tailwind', 'Docker'],
     demo: { user: 'alice@voltexchange.com', pass: 'senha123' },
   },
@@ -21,6 +24,7 @@ export const platforms = [
     liveUrl: 'https://travel.andrepacheco.pt',
     live: false,
     image: '/thumbs/travel-companion.png',
+    theme: '#38bdf8',
     stack: ['Node.js', 'Express', 'PostgreSQL', 'React', 'TypeScript', 'Docker'],
   },
   {
@@ -30,6 +34,7 @@ export const platforms = [
     liveUrl: 'https://folio.andrepacheco.pt',
     live: false,
     image: '/thumbs/folio.png',
+    theme: '#34d399',
     stack: ['Java', 'Spring Boot', 'PostgreSQL', 'React', 'TypeScript', 'Resend', 'Docker'],
   },
   {
@@ -39,6 +44,7 @@ export const platforms = [
     liveUrl: 'https://millionaire.andrepacheco.pt',
     live: false,
     image: '/thumbs/game-page.jpg',
+    theme: '#eab308',
     stack: ['Laravel', 'PHP', 'SQLite', 'JavaScript', 'Docker'],
   },
   {
@@ -48,6 +54,7 @@ export const platforms = [
     liveUrl: 'https://gamelobby.andrepacheco.pt',
     live: false,
     image: '/thumbs/gamelobby.jpg',
+    theme: '#f97316',
     stack: ['PHP', 'MySQL', 'IGDB API', 'Docker'],
   },
   {
@@ -57,6 +64,7 @@ export const platforms = [
     liveUrl: 'https://kits.andrepacheco.pt',
     live: false,
     image: '/thumbs/kits.png',
+    theme: '#ef4444',
     stack: ['Laravel', 'Svelte', 'PostgreSQL', 'Docker'],
   },
   {
@@ -66,6 +74,7 @@ export const platforms = [
     liveUrl: 'https://ecofuturo.andrepacheco.pt',
     live: false,
     image: '/thumbs/ecofuturo.jpg',
+    theme: '#4ade80',
     stack: ['PHP', 'MySQL', 'Docker'],
   },
 ];
@@ -79,6 +88,9 @@ export const games = [
     // Vídeo local (re-comprimido para 720p/12MB), aberto numa modal;
     // original: NetherfallTrailerAndrePacheco-compressed.mp4 no repo do jogo
     trailer: '/trailers/netherfall.mp4',
+    // Build pygbag (WebAssembly) servida pelo próprio site
+    runUrl: '/apps/netherfall/index.html',
+    runLabel: 'play',
     stack: ['Python', 'Pygame'],
   },
 ];
@@ -100,30 +112,35 @@ export const systems = [
     id: 'repairflow',
     name: 'RepairFlow / RepairFlow-UI',
     repo: 'https://github.com/XekoJr/RepairFlow',
-    stack: ['Java', 'Swing', 'Service/DAO'],
+    runUrl: '/apps/repairflow/index.html', // versão terminal, CheerpJ + H2
+    stack: ['Java', 'SQL', 'Swing', 'Service/DAO'],
   },
   {
     id: 'healthcenter',
     name: 'Health Center',
     repo: 'https://github.com/XekoJr/health-center',
+    runUrl: '/apps/health-center/index.html', // CheerpJ (JVM em WASM)
     stack: ['Java'],
   },
   {
     id: 'repairshop',
     name: 'Repair Shop',
     repo: 'https://github.com/XekoJr/Repair-Shop',
+    runUrl: '/apps/repair-shop/index.html', // Emscripten + xterm
     stack: ['C', 'Linked lists', 'Binary files'],
   },
   {
     id: 'gamestore',
     name: 'Game Store',
     repo: 'https://github.com/XekoJr/game-store-java',
+    runUrl: '/apps/game-store/index.html', // CheerpJ (JVM em WASM)
     stack: ['Java'],
   },
   {
     id: 'storec',
     name: 'Store Management',
     repo: 'https://github.com/XekoJr/store-c',
+    runUrl: '/apps/store-c/index.html', // Emscripten + xterm
     stack: ['C'],
   },
 ];
@@ -140,8 +157,8 @@ export const mobile = [
     id: 'qrscanner',
     name: 'QR Safe Scanner',
     repo: null, // produto privado — sem link de código
-    image: null,
-    stack: ['Kotlin', 'Android', 'Stripe'],
+    image: '/thumbs/qr-scanner.png', // banner composto a partir do ícone real do produto
+    stack: ['React Native', 'Stripe'],
     privateProject: true,
   },
 ];

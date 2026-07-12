@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store Management (C) — live terminal</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/apps/lib/xterm.css" />
+    <style>
+      body { margin: 0; background: #0a0a0b; color: #d4d4d8; font-family: ui-sans-serif, system-ui, sans-serif; }
+      header { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,.08); }
+      header h1 { font-size: 15px; margin: 0; font-weight: 600; color: #fff; }
+      header .hint { font-size: 12px; color: #71717a; }
+      header a { color: #a78bfa; text-decoration: none; font-size: 13px; }
+      #terminal { padding: 16px 20px; }
+      .badge { font-family: ui-monospace, monospace; font-size: 11px; color: #22d3ee; border: 1px solid rgba(34,211,238,.3); border-radius: 6px; padding: 2px 8px; margin-left: 10px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Store Management <span class="badge">C → WebAssembly</span></h1>
+      <span class="hint">Runs entirely in your browser (Emscripten). Data resets on reload.</span>
+      <a href="/">← back to portfolio</a>
+    </header>
+    <div id="terminal"></div>
+
+    <script src="/apps/lib/xterm.js"></script>
+    <script src="/apps/lib/xterm-pty.js"></script>
+    <script type="module">
+      import initEmscripten from './store-c.mjs';
+
+      const xterm = new Terminal({
+        cols: 110,
+        rows: 34,
+        cursorBlink: true,
+        fontSize: 14,
+        theme: { background: '#0a0a0b', foreground: '#d4d4d8', cursor: '#22d3ee' },
+      });
+      xterm.open(document.getElementById('terminal'));
+
+      const { master, slave } = openpty();
+      xterm.loadAddon(master);
+
+      await initEmscripten({
+        pty: slave,
+        onExit: () => slave.write('\r\n\x1b[36m— program exited — reload the page to restart —\x1b[0m\r\n'),
+      });
+    </script>
+  </body>
+</html>

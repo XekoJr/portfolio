@@ -38,6 +38,13 @@ defineProps({
         {{ t(`projects.items.${project.id}.desc`) }}
       </p>
       <div class="mt-4 flex gap-4 text-sm font-medium">
+        <a
+          v-if="project.runUrl"
+          :href="project.runUrl"
+          target="_blank"
+          rel="noopener"
+          class="gradient-text"
+        >{{ project.runLabel === 'play' ? t('projects.playBrowser') : t('projects.runBrowser') }} ↗</a>
         <button
           v-if="project.trailer"
           class="gradient-text cursor-pointer"

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Center (Java) — live terminal</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      html, body { height: 100%; }
+      body { margin: 0; background: #0a0a0b; color: #d4d4d8; font-family: ui-sans-serif, system-ui, sans-serif; display: flex; flex-direction: column; }
+      header { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,.08); }
+      header h1 { font-size: 15px; margin: 0; font-weight: 600; color: #fff; }
+      header .hint { font-size: 12px; color: #71717a; }
+      header a { color: #a78bfa; text-decoration: none; font-size: 13px; }
+      .badge { font-family: ui-monospace, monospace; font-size: 11px; color: #22d3ee; border: 1px solid rgba(34,211,238,.3); border-radius: 6px; padding: 2px 8px; margin-left: 10px; }
+      #container { flex: 1; }
+      #loading { padding: 24px 20px; font-size: 14px; color: #71717a; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Health Center <span class="badge">Java → CheerpJ (JVM in WASM)</span></h1>
+      <span class="hint">Type in the field at the bottom and press Enter. Data persists in your browser.</span>
+      <a href="/">← back to portfolio</a>
+    </header>
+    <div id="loading">Loading the JVM (first load takes a few seconds)…</div>
+    <div id="container"></div>
+
+    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
+    <script type="module">
+      await cheerpjInit({
+        version: 8,
+        status: 'none',
+        javaProperties: ['user.dir=/files'],
+      });
+      cheerpjCreateDisplay(-1, -1, document.getElementById('container'));
+      document.getElementById('loading').remove();
+      await cheerpjRunMain('WebConsole', '/app/apps/health-center/health-center.jar', 'App');
+    </script>
+  </body>
+</html>

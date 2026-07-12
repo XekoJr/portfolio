@@ -11,7 +11,7 @@
     "greeting": "Olá, sou o",
     "role": "Software Developer",
     "tagline": "Construo plataformas full-stack, jogos e software de sistemas — e faço o hosting eu próprio.",
-    "sub": "Estudante de Engenharia Informática de Oliveira do Hospital, Portugal. Tudo o que está aqui em baixo corre a sério: cada plataforma no seu container Docker, servida a partir do meu homelab.",
+    "sub": "Estudante de Engenharia Informática, natural de Penedono (Viseu) e a estudar em Oliveira do Hospital. Tudo o que está aqui em baixo corre a sério: cada plataforma no seu container Docker, servida a partir do meu homelab.",
     "ctaPlatforms": "Experimenta as plataformas",
     "ctaGithub": "GitHub"
   },
@@ -31,12 +31,12 @@
       "frontend": "Frontend",
       "data": "Bases de Dados",
       "infra": "Infra & DevOps",
-      "mobile-ai": "Mobile & AI tooling"
+      "mobile": "Mobile"
     }
   },
   "platforms": {
     "title": "Plataformas Live",
-    "sub": "Plataformas completas que podes mesmo usar — cada uma dockerizada e self-hosted no meu homelab, exposta via Cloudflare Tunnel.",
+    "sub": "Plataformas completas que podes mesmo usar — cada uma dockerizada e self-hosted no meu homelab, exposta através de um tunnel seguro.",
     "openLive": "Abrir live",
     "liveSoon": "Brevemente",
     "viewCode": "Ver código",
@@ -99,13 +99,15 @@
     "sub": "Jogos, programação de sistemas e mobile.",
     "gamesTitle": "Jogos",
     "firstTitle": "Primeiro Projeto",
-    "systemsTitle": "Java & Sistemas",
+    "systemsTitle": "Java/C & Sistemas",
     "mobileTitle": "Mobile",
     "privateBadge": "Produto privado",
     "watchTrailer": "Ver trailer",
+    "runBrowser": "Correr no browser",
+    "playBrowser": "Jogar no browser",
     "items": {
       "netherfall": {
-        "desc": "Jogo de sobrevivência top-down feito com Pygame — v2 do meu projeto inspirado em Vampire Survivors, reconstruído com melhor arquitetura, sistema de saves e progressão. Versão para browser em breve neste site."
+        "desc": "Jogo de sobrevivência top-down feito com Pygame — v2 do meu projeto inspirado em Vampire Survivors, reconstruído com melhor arquitetura, sistema de saves e progressão. Compilado para WebAssembly (pygbag) — jogável aqui mesmo no browser."
       },
       "f1page": {
         "desc": "Fan page só com HTML e CSS sobre a série Drive to Survive da Netflix — o meu primeiro projeto \"a sério\", mantido aqui para mostrar a progressão."
@@ -139,21 +141,28 @@
     "cards": {
       "proxmox": {
         "title": "Virtualização & isolamento",
-        "desc": "Um hipervisor com containers isolados, um por serviço — as plataformas aqui de cima mais um punhado de outras ferramentas self-hosted, nunca a partilhar máquina."
+        "desc": "Um hipervisor com containers isolados, um por serviço — as plataformas aqui de cima mais tudo o que está em baixo, nunca a partilhar máquina."
       },
       "edge": {
-        "title": "Tunnel + reverse proxy",
-        "desc": "Zero portas abertas no router: um tunnel traz o tráfego de fora, e um reverse proxy encaminha cada subdomínio para o container certo, com TLS gerido de forma centralizada."
+        "title": "Tunnel, reverse proxy & VPN",
+        "desc": "Zero portas abertas no router: um tunnel traz o tráfego público, um reverse proxy encaminha cada subdomínio para o container certo com TLS centralizado, e a minha própria VPN com Tailscale dá-me acesso privado ao lab a partir de qualquer lado."
       },
       "hera": {
-        "title": "Agente pessoal de automação",
-        "desc": "Um assistente self-hosted, construído por mim, ligado a alguns dos meus serviços pessoais, com memória persistente — a correr no meu próprio hardware, não numa cloud de terceiros."
+        "title": "Hera — agente de AI pessoal",
+        "desc": "O meu próprio agente, construído sobre o framework Hermes Agent: ligado a alguns dos meus serviços pessoais, com memória persistente — a correr no meu hardware, não numa cloud de terceiros."
       },
-      "email": {
-        "title": "Email transacional",
-        "desc": "Um domínio de envio verificado — emails de verificação de conta e reset de password para as plataformas que precisam."
+      "services": {
+        "title": "Serviços self-hosted",
+        "desc": "O lab corre os serviços que uso todos os dias: gestor de passwords, NAS/armazenamento, sincronização de notas, Home Assistant, bloqueio de anúncios na rede toda com AdGuard, um servidor de Minecraft para os amigos — entre outros."
       }
     }
+  },
+  "apps": {
+    "cta": "Corre as apps de terminal & o jogo — aqui mesmo",
+    "ctaSub": "C, Java e Python compilados para WebAssembly. Sem instalar nada, sem servidor — correm no teu browser.",
+    "ctaAction": "Abrir launcher",
+    "title": "Correr no browser",
+    "sub": "Cada uma abre num separador novo e corre totalmente no cliente (WebAssembly)."
   },
   "contact": {
     "title": "Fala comigo",
@@ -161,7 +170,7 @@
     "emailCta": "Diz olá"
   },
   "footer": {
-    "built": "Feito com Vue 3 + Tailwind CSS, self-hosted no meu homelab.",
+    "built": "Feito com Vue 3 + Tailwind CSS.",
     "rights": "André Pacheco"
   }
 }

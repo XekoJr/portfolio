@@ -32,28 +32,34 @@ function initials(name) {
     <div class="mx-auto max-w-6xl px-4 sm:px-6" v-reveal>
       <SectionHeading :title="t('platforms.title')" :sub="t('platforms.sub')" />
 
-      <!-- Tab bar -->
+      <!-- Tab bar — cada tab com a cor da sua plataforma -->
       <div class="mb-8 flex flex-wrap gap-2" role="tablist">
         <button
           v-for="p in platforms"
           :key="p.id"
           role="tab"
           :aria-selected="p.id === activeId"
-          class="rounded-lg border px-4 py-2 text-sm font-medium transition"
-          :class="p.id === activeId
-            ? 'border-violet-500/50 bg-violet-500/10 text-white'
-            : 'border-white/10 text-zinc-400 hover:border-white/25 hover:text-white'"
+          class="flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium transition"
+          :class="p.id === activeId ? 'text-white' : 'border-white/10 text-zinc-400 hover:border-white/25 hover:text-white'"
+          :style="p.id === activeId
+            ? { borderColor: p.theme + '80', backgroundColor: p.theme + '1a' }
+            : {}"
           @click="activeId = p.id"
         >
+          <span class="h-2 w-2 rounded-full" :style="{ backgroundColor: p.theme }" aria-hidden="true"></span>
           {{ p.name }}
         </button>
       </div>
 
-      <!-- Painel ativo -->
+      <!-- Painel ativo — fundo tingido com o tema da plataforma -->
       <div
         :key="active.id"
-        class="grid gap-8 rounded-2xl border border-white/10 bg-[#0a0a0b] p-6 sm:p-8 lg:grid-cols-2"
+        class="grid gap-8 rounded-2xl border p-6 sm:p-8 lg:grid-cols-2"
         role="tabpanel"
+        :style="{
+          borderColor: active.theme + '40',
+          background: `linear-gradient(135deg, ${active.theme}14 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 100% 100%, ${active.theme}0d, transparent), #0a0a0b`,
+        }"
       >
         <!-- Screenshot / monograma -->
         <div class="flex min-h-56 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/40">

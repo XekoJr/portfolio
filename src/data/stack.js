@@ -29,8 +29,7 @@ import {
   siGit,
   siLinux,
   siResend,
-  siAndroid,
-  siClaude,
+  siAndroidstudio,
 } from 'simple-icons';
 
 export const stack = [
@@ -88,11 +87,11 @@ export const stack = [
     ],
   },
   {
-    id: 'mobile-ai',
+    id: 'mobile',
     items: [
-      { name: 'Android', icon: siAndroid },
+      { name: 'Android Studio', icon: siAndroidstudio },
       { name: 'Kotlin', icon: siKotlin },
-      { name: 'Claude Code', icon: siClaude },
+      { name: 'React Native', icon: siReact },
     ],
   },
 ];

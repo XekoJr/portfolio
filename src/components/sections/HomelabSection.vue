@@ -10,7 +10,7 @@ const cards = [
   { id: 'proxmox', icon: 'M4 6h16v10H4z M8 20h8 M12 16v4' },
   { id: 'edge', icon: 'M12 3v18 M3 12h18 M5.6 5.6l12.8 12.8 M18.4 5.6L5.6 18.4' },
   { id: 'hera', icon: 'M9 3h6v4H9z M5 11h14v10H5z M12 7v4 M9 16h.01 M15 16h.01' },
-  { id: 'email', icon: 'M3 6h18v12H3z M3 7l9 6 9-6' },
+  { id: 'services', icon: 'M4 4h16v6H4z M4 14h16v6H4z M8 7h.01 M8 17h.01' },
 ];
 </script>
 
