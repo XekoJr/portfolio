@@ -71,13 +71,14 @@
         "desc": "\"Quem Quer Ser Milionário\" — um quiz jogável com uma API Laravel por trás: autenticação JWT, gestão de perguntas e registo de pontuações.",
         "highlights": [
           "Originalmente dois repos separados (API + frontend), fundidos e dockerizados como uma plataforma única",
-          "O frontend recebe o URL da API injetado no arranque do container — sem rebuilds por ambiente"
+          "Jogo dinâmico feito em JS vanilla — sem framework, manipulação direta do DOM e chamadas à API"
         ]
       },
       "gamelobby": {
         "desc": "\"TV Time para jogos\" — acompanha o que andas a jogar, avalia e escreve reviews. Os dados dos jogos vêm em direto da API do IGDB.",
         "highlights": [
-          "Codebase PHP legacy que endureci: sessões nativas a substituir um cookie legível por JS que transportava o hash da password, MD5 migrado para bcrypt com upgrade transparente no login"
+          "Dados de jogos em direto da API do IGDB — pesquisa, capas e metadados sincronizados a partir da base de dados de jogos da Twitch",
+          "Codebase PHP legacy, autenticação por sessão com hash de password em bcrypt"
         ]
       },
       "kits": {

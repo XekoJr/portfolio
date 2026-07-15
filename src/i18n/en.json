@@ -71,13 +71,14 @@
         "desc": "\"Who Wants to Be a Millionaire\" — a playable quiz game with a Laravel API behind it: JWT auth, question management and score tracking.",
         "highlights": [
           "Originally two separate repos (API + frontend), merged and dockerized as one platform",
-          "Frontend gets the API URL injected at container start — no rebuilds per environment"
+          "Dynamic gameplay built in vanilla JS — no framework, straight DOM manipulation and API calls"
         ]
       },
       "gamelobby": {
         "desc": "\"TV Time for games\" — track what you're playing, rate it, review it. Game data comes live from the IGDB API.",
         "highlights": [
-          "Legacy PHP codebase I hardened: session-based auth replacing a JS-readable cookie that carried the password hash, MD5 migrated to bcrypt with transparent upgrade on login"
+          "Live game data pulled from the IGDB API — search, cover art and metadata synced straight from Twitch's game database",
+          "Legacy PHP codebase, session-based auth with bcrypt password hashing"
         ]
       },
       "kits": {

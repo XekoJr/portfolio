@@ -1,7 +1,7 @@
 // Dados estruturais dos projetos. Textos (descrições/destaques) vivem nos
-// ficheiros de i18n, keyed por `id`. `liveUrl` são os subdomínios previstos —
-// `live: false` mostra "Live soon" até o Tunnel/Caddy estar montado; basta
-// mudar para `true` quando cada plataforma for para o ar.
+// ficheiros de i18n, keyed por `id`. `liveUrl` são os subdomínios reais —
+// `live: false` mostra "Brevemente" até o Tunnel/Caddy estar montado; volta
+// a `false` se alguma plataforma precisar de sair do ar temporariamente.
 
 // `theme` — cor de destaque por plataforma, usada para tingir o painel da
 // tab respetiva (deixa claro que cada tab é uma plataforma diferente)
@@ -11,7 +11,7 @@ export const platforms = [
     name: 'VoltExchange',
     repo: 'https://github.com/XekoJr/voltexchange',
     liveUrl: 'https://volt.andrepacheco.pt',
-    live: false,
+    live: true,
     image: '/thumbs/voltexchange.png',
     theme: '#22d3ee',
     stack: ['Node.js', 'Express', 'PostgreSQL 16', 'Vue 3', 'Tailwind', 'Docker'],
@@ -22,7 +22,7 @@ export const platforms = [
     name: 'Travel Companion',
     repo: 'https://github.com/XekoJr/travel-companion',
     liveUrl: 'https://travel.andrepacheco.pt',
-    live: false,
+    live: true,
     image: '/thumbs/travel-companion.png',
     theme: '#38bdf8',
     stack: ['Node.js', 'Express', 'PostgreSQL', 'React', 'TypeScript', 'Docker'],
@@ -32,7 +32,7 @@ export const platforms = [
     name: 'Folio',
     repo: 'https://github.com/XekoJr/folio-product',
     liveUrl: 'https://folio.andrepacheco.pt',
-    live: false,
+    live: true,
     image: '/thumbs/folio.png',
     theme: '#34d399',
     stack: ['Java', 'Spring Boot', 'PostgreSQL', 'React', 'TypeScript', 'Resend', 'Docker'],
@@ -42,7 +42,7 @@ export const platforms = [
     name: 'Millionaire Game',
     repo: 'https://github.com/XekoJr/millionaire-game',
     liveUrl: 'https://millionaire.andrepacheco.pt',
-    live: false,
+    live: true,
     image: '/thumbs/game-page.jpg',
     theme: '#eab308',
     stack: ['Laravel', 'PHP', 'SQLite', 'JavaScript', 'Docker'],
@@ -52,7 +52,7 @@ export const platforms = [
     name: 'GameLobby',
     repo: 'https://github.com/XekoJr/gamelobby-platform',
     liveUrl: 'https://gamelobby.andrepacheco.pt',
-    live: false,
+    live: true,
     image: '/thumbs/gamelobby.jpg',
     theme: '#f97316',
     stack: ['PHP', 'MySQL', 'IGDB API', 'Docker'],
@@ -62,7 +62,7 @@ export const platforms = [
     name: 'Kits',
     repo: 'https://github.com/XekoJr/Kits',
     liveUrl: 'https://kits.andrepacheco.pt',
-    live: false,
+    live: true,
     image: '/thumbs/kits.png',
     theme: '#ef4444',
     stack: ['Laravel', 'Svelte', 'PostgreSQL', 'Docker'],
@@ -72,7 +72,7 @@ export const platforms = [
     name: 'EcoFuturo',
     repo: 'https://github.com/XekoJr/ecofuturo',
     liveUrl: 'https://ecofuturo.andrepacheco.pt',
-    live: false,
+    live: true,
     image: '/thumbs/ecofuturo.jpg',
     theme: '#4ade80',
     stack: ['PHP', 'MySQL', 'Docker'],
