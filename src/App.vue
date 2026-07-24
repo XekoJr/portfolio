@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from 'vue';
 import NavBar from './components/NavBar.vue';
 import HeroSection from './components/sections/HeroSection.vue';
 import AboutSection from './components/sections/AboutSection.vue';
@@ -8,6 +9,13 @@ import ProjectsSection from './components/sections/ProjectsSection.vue';
 import HomelabSection from './components/sections/HomelabSection.vue';
 import ContactSection from './components/sections/ContactSection.vue';
 import SiteFooter from './components/SiteFooter.vue';
+import ConsentBanner from './components/ConsentBanner.vue';
+import { hasConsent, loadGA4 } from './utils/analytics';
+
+onMounted(() => {
+  if (hasConsent() === 'granted') loadGA4();
+});
+
 </script>
 
 <template>
@@ -22,4 +30,5 @@ import SiteFooter from './components/SiteFooter.vue';
     <ContactSection />
   </main>
   <SiteFooter />
+  <ConsentBanner />
 </template>

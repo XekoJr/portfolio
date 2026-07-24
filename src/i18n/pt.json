@@ -173,5 +173,10 @@
   "footer": {
     "built": "Feito com Vue 3 + Tailwind CSS.",
     "rights": "André Pacheco"
+  },
+  "cookieConsent": {
+    "message": "Este site usa Google Analytics para perceber quantas pessoas o visitam. Nenhum dado pessoal é vendido ou partilhado além disso.",
+    "accept": "Aceitar",
+    "decline": "Recusar"
   }
 }
