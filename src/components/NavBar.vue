@@ -9,6 +9,7 @@ const open = ref(false);
 
 const links = [
   { id: 'about', key: 'nav.about' },
+  { id: 'experience', key: 'nav.experience' },
   { id: 'stack', key: 'nav.stack' },
   { id: 'platforms', key: 'nav.platforms' },
   { id: 'projects', key: 'nav.projects' },

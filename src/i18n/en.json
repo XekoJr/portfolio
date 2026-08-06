@@ -1,6 +1,7 @@
 {
   "nav": {
     "about": "About",
+    "experience": "Experience",
     "stack": "Stack",
     "platforms": "Live Platforms",
     "projects": "Projects",
@@ -21,6 +22,33 @@
     "p2": "What I enjoy most is the full path: designing the data layer, building the API on top, giving it a clean UI, then containerizing the whole thing and putting it behind a reverse proxy on my own hardware.",
     "aiTitle": "How I use AI",
     "aiText": "I've been using Claude Code in my daily workflow since February 2026 — for code review and security passes. The point isn't delegating everything: it's orchestrating AI tools inside a workflow I control. I also run my own self-hosted AI agent, connected to a few personal services, with persistent memory — on my homelab, not someone else's cloud."
+  },
+  "experience": {
+    "title": "Experience",
+    "sub": "What I've been doing outside of personal projects.",
+    "company": "i9 Business",
+    "location": "Viseu, Portugal · Hybrid",
+    "presentLabel": "Present",
+    "roles": {
+      "workingStudent2026": {
+        "title": "Working Student — Full Stack Developer",
+        "type": "Part-time",
+        "period": "Feb 2026 - Present"
+      },
+      "fullTime2025": {
+        "title": "Full Stack Developer",
+        "type": "Full-time",
+        "period": "Jun 2025 - Jan 2026"
+      },
+      "intern2025": {
+        "title": "Full Stack Developer Intern",
+        "type": "Internship",
+        "period": "Feb 2025 - Jun 2025",
+        "note": "Academic internship"
+      }
+    },
+    "focusTitle": "What I'm focused on now",
+    "focusText": "Right now I'm working on features and platforms built entirely around AI — everything from assistants to full AI-driven platforms."
   },
   "stack": {
     "title": "Stack",

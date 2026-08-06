@@ -3,6 +3,7 @@ import { onMounted } from 'vue';
 import NavBar from './components/NavBar.vue';
 import HeroSection from './components/sections/HeroSection.vue';
 import AboutSection from './components/sections/AboutSection.vue';
+import ExperienceSection from './components/sections/ExperienceSection.vue';
 import StackSection from './components/sections/StackSection.vue';
 import PlatformsSection from './components/sections/PlatformsSection.vue';
 import ProjectsSection from './components/sections/ProjectsSection.vue';
@@ -23,6 +24,7 @@ onMounted(() => {
   <main>
     <HeroSection />
     <AboutSection />
+    <ExperienceSection />
     <StackSection />
     <PlatformsSection />
     <ProjectsSection />
